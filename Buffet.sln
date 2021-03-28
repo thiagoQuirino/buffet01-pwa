@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buffet", "Buffet\Buffet.csproj", "{CDFC6DD0-6508-404F-977B-FCEF7E49036B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDFC6DD0-6508-404F-977B-FCEF7E49036B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDFC6DD0-6508-404F-977B-FCEF7E49036B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDFC6DD0-6508-404F-977B-FCEF7E49036B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDFC6DD0-6508-404F-977B-FCEF7E49036B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
