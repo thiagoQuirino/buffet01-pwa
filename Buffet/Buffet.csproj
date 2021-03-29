@@ -4,4 +4,20 @@
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="wwwroot\img" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="ViewModels\Shared\Error.cshtml" />
+      <_ContentIncludedByDefault Remove="ViewModels\Shared\_DadosUsuario.cshtml" />
+      <_ContentIncludedByDefault Remove="ViewModels\Shared\_FormCadastro.cshtml" />
+      <_ContentIncludedByDefault Remove="ViewModels\Shared\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="ViewModels\Shared\_LayoutAdimin.cshtml" />
+      <_ContentIncludedByDefault Remove="ViewModels\Shared\_LayoutInterno.cshtml" />
+      <_ContentIncludedByDefault Remove="ViewModels\Shared\_Secao.cshtml" />
+      <_ContentIncludedByDefault Remove="ViewModels\Shared\_TabelaDeStatus.cshtml" />
+      <_ContentIncludedByDefault Remove="ViewModels\Shared\_ValidationScriptsPartial.cshtml" />
+    </ItemGroup>
+
 </Project>

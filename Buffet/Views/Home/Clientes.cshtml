@@ -9,6 +9,12 @@
 <p>Listagem de clientes.</p>
 <ul>
     @foreach (Cliente cliente in Model.Clientes) {
-        <li>@cliente.Nome nascido em @cliente.DataDeNascimento</li>    
+        <li>
+            @cliente.Nome e possue @cliente.Idade anos de vida
+            @if (@cliente.Idade < 45)
+            {
+                <span> menor que 45 anos </span>
+            }
+        </li>    
     }
-</ul> 
+</ul>

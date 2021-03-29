@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Buffet.Models;
+using Buffet.Models.Buffet;
 using Buffet.Models.Buffet.Cliente;
 using Buffet.ViewModels.Home;
+using Buffet.ViewModels.shared;
 
 namespace Buffet.Controllers
 {
@@ -22,10 +24,91 @@ namespace Buffet.Controllers
 
         public IActionResult Index()
         {
-            return View();
+
+
+
+            // 1º Forma de enviar dados para a view
+            ViewBag.InformacaoQualquer = "Informação Qualquer";
+
+            // 2º Forma de enviar dados para a view
+            ViewData["informacao"] = "Outra informação";
+            // 3º Forma de enviar dados para a view
+            var viewmodel = new IndexViewModel();
+            viewmodel.InformacaoQualquer = "Informação pela View Model";
+            viewmodel.Titulo = "Título qualquer";
+           
+            
+            return View(viewmodel);
         }
 
-        public IActionResult Privacy()
+        
+        public IActionResult PainelUsuario()
+        {
+            return View();
+        }
+        public IActionResult StatusConvidado()
+        {
+            var viewModel = new StatusConvidadoViewModel();
+            return View(viewModel);
+        }
+        public IActionResult StatusEvento()
+        {
+            // Acessando um service para obter a lista de
+            // Status dos Eventos
+            var listaStatusEventos = new List<StatusEvento>();
+            listaStatusEventos.Add(new StatusEvento()
+            {
+                Id = 1,
+                Descricao = "Reservado"
+            });
+            listaStatusEventos.Add(new StatusEvento()
+            {
+                Id = 2,
+                Descricao = "Confirmado"
+            });
+            listaStatusEventos.Add(new StatusEvento()
+            {
+                Id = 3,
+                Descricao = "Realizado"
+            });
+            
+            // Crio a view model
+            var viewmodel = new StatusEventoViewModel();
+            
+            // Alimento a view model com os dados dos status
+            foreach (StatusEvento statusEvento in listaStatusEventos) {
+                viewmodel.ListaDeStatus.Add(new Status()
+                {
+                    Id = statusEvento.Id,
+                    Descricao = statusEvento.Descricao,
+                });
+            }
+            
+            return View(viewmodel);
+        }
+        public IActionResult Ajuda()
+        {
+            return View();
+        }
+        public IActionResult Secao1()
+        {
+            return View();
+        }
+       
+        
+        public IActionResult Login()
+        {
+            return View();
+        }
+        public IActionResult Cadastro()
+        {
+            return View();
+        }
+        public IActionResult TermoDeUso()
+        {
+            return View();
+        }
+        public IActionResult PoliticaDePrivacidade()
         {
             return View();
         }
@@ -42,13 +125,14 @@ namespace Buffet.Controllers
                 viewModel.Clientes.Add(new Cliente
                 {
                     Nome = clienteEntity.Nome,
-                    DataDeNascimento = clienteEntity.DataDeNascimento.ToShortDateString()
+                    DataDeNascimento = clienteEntity.DataDeNascimento.ToShortDateString(),
+                    Idade = clienteEntity.Idade
                 });
             }
 
             return View(viewModel);
         }
-        
+       
        
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
