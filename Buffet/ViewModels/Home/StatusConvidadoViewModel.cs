@@ -5,15 +5,15 @@ namespace Buffet.ViewModels.Home
 {
     public class StatusConvidadoViewModel
     {
-        public class TabelaDeStatusPartialViewModel
-        {
+       
+        
             public List<Status> ListaDeStatus { get; set; }
 
-            public TabelaDeStatusPartialViewModel()
+            public StatusConvidadoViewModel()
             {
                 ListaDeStatus = new List<Status>();
             }
-        }
+        
        
     }
 }

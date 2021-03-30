@@ -36,6 +36,11 @@ namespace Buffet.Controllers
             var viewmodel = new IndexViewModel();
             viewmodel.InformacaoQualquer = "Informação pela View Model";
             viewmodel.Titulo = "Título qualquer";
+            viewmodel.UsuarioLogado = new Usuario()
+            {
+                Nome = "Thiago",
+                Idade = 36
+            };
            
             
             return View(viewmodel);
@@ -77,11 +82,12 @@ namespace Buffet.Controllers
             
             // Alimento a view model com os dados dos status
             foreach (StatusEvento statusEvento in listaStatusEventos) {
-                viewmodel.ListaDeStatus.Add(new Status()
-                {
-                    Id = statusEvento.Id,
-                    Descricao = statusEvento.Descricao,
-                });
+             viewmodel.ListaDeStatus.Add(item: new Status()
+             {
+                 Id = statusEvento.Id,
+                 Descricao = statusEvento.Descricao
+                 
+             });
             }
             
             return View(viewmodel);

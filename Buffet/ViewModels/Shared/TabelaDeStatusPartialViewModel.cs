@@ -2,7 +2,8 @@
 
 namespace Buffet.ViewModels.shared
 {
-    
+  
+   
 
     public class Status
     {

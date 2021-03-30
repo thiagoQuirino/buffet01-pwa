@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Buffet.ViewModels.Home.IndexViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -14,7 +15,7 @@
 </div>
 
 
-<partial name="_DadosUsuario">   </partial>
+<partial name ="_DadosUsuario" for = "@Model.UsuarioLogado">   </partial>
 
 
 

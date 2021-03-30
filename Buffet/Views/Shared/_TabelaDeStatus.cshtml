@@ -1,4 +1,7 @@
-﻿<table>
+﻿@using Buffet.ViewModels.shared
+
+
+<table>
     <thead>
     <tr>
         <th>  Id </th>
@@ -9,7 +12,13 @@
     </thead>
     <tbody>
     
-    
+    @foreach (Status status in @Model)
+    {
+        <tr>
+            <td>@status.Id</td>
+            <td>@status.Descricao</td>
+        </tr>
+    }
     </tbody>
     
     
