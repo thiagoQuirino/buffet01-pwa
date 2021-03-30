@@ -53,8 +53,39 @@ namespace Buffet.Controllers
         }
         public IActionResult StatusConvidado()
         {
-            var viewModel = new StatusConvidadoViewModel();
-            return View(viewModel);
+            //Acessando um service para obter a lista de
+            // Status dos Eventos
+            var listaStatusConvidado = new List<StatusConvidado>();
+            listaStatusConvidado.Add(new StatusConvidado()
+            {
+                Id = 1,
+                Descricao = "A confirmar"
+            });
+            listaStatusConvidado.Add(new StatusConvidado()
+            {
+                Id = 2,
+                Descricao = "Confirmado"
+            });
+            listaStatusConvidado.Add(new StatusConvidado()
+            {
+                Id = 3,
+                Descricao = "Desistente"
+            });
+            
+            // Crio a view model
+            var viewmodel = new StatusConvidadoViewModel();
+            
+            // Alimento a view model com os dados dos status
+            foreach (StatusConvidado statusConvidado in listaStatusConvidado) {
+                viewmodel.ListaDeStatus.Add(item: new Status()
+                {
+                    Id = statusConvidado.Id,
+                    Descricao = statusConvidado.Descricao
+                 
+                });
+            }
+            
+            return View(viewmodel);
         }
         public IActionResult StatusEvento()
         {
